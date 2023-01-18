@@ -15,8 +15,10 @@ io.on('connection', (socket) => {
 
     socket.on('message', (data) => {
         console.log('message!!!!')
+        //接続者全員に送信
         io.emit('message', data)
     })
+
 })
 
 // server listen
