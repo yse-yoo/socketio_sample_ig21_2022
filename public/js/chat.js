@@ -16,5 +16,7 @@ $(() => {
     // receive message
     socket.on('message', (data) => {
         console.log(data)
+        const p = $('<p>').append(data.message)
+        chatList.prepend(p)
     })
 })
