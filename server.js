@@ -11,7 +11,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'))
 
 io.on('connection', (socket) => {
-    socket.io('message', (data) => {
+    console.log('connection!!!!')
+
+    socket.on('message', (data) => {
+        console.log('message!!!!')
         io.emit('message', data)
     })
 })
